@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System.CodeDom.Compiler;
+using System.Collections.Immutable;
 using System.Runtime.InteropServices;
 using MoltenVKGen;
 #nullable disable
@@ -7,8 +8,18 @@ class Program
 {
     static void Main(string[] args)
     {
-        string vkFile = "..\\net7.0\\KhronosRegistry\\vk.xml";
         string outputPath = "..\\..\\..\\..\\MacMoltenVK\\VulkanGenerated";
+
+        GenerateFiles(outputPath);
+
+        outputPath = "..\\..\\..\\..\\MacVulkan\\VulkanGenerated";
+
+    }
+
+    public static void GenerateFiles(string outputPath)
+    {
+        string vkFile = "..\\net7.0\\KhronosRegistry\\vk.xml";
+        // string outputPath = "..\\..\\..\\..\\MacMoltenVK\\VulkanGenerated";
 
         if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
         {
@@ -26,7 +37,7 @@ class Program
             file.WriteLine("#nullable disable\n");
             file.WriteLine("namespace GPUVulkan;");
 
-        //    file.WriteLine("{");
+            //    file.WriteLine("{");
             file.WriteLine("\tpublic static partial class VulkanNative");
             file.WriteLine("\t{");
 
@@ -46,7 +57,7 @@ class Program
             }
 
             file.WriteLine("\t}");
-         //   file.WriteLine("}");
+            //   file.WriteLine("}");
         }
 
         // Delegates
@@ -55,7 +66,7 @@ class Program
             file.WriteLine("using System;\n");
             file.WriteLine("#nullable disable\n");
             file.WriteLine("namespace GPUVulkan;");
-           // file.WriteLine("{");
+            // file.WriteLine("{");
 
             foreach (var func in vulkanVersion.FuncPointers)
             {
@@ -91,7 +102,7 @@ class Program
                 file.Write(");\n\n");
             }
 
-       //     file.WriteLine("}");
+            //     file.WriteLine("}");
         }
 
         // Enums
@@ -100,7 +111,7 @@ class Program
             file.WriteLine("using System;\n");
             file.WriteLine("#nullable disable\n");
             file.WriteLine("namespace GPUVulkan;");
-          //  file.WriteLine("{");
+            //  file.WriteLine("{");
 
             foreach (var e in vulkanVersion.Enums)
             {
@@ -124,7 +135,7 @@ class Program
 
             }
 
-           // file.WriteLine("}");
+            // file.WriteLine("}");
         }
 
         // Unions
@@ -133,7 +144,7 @@ class Program
             file.WriteLine("using System.Runtime.InteropServices;\n");
             file.WriteLine("#nullable disable\n");
             file.WriteLine("namespace GPUVulkan;");
-        //    file.WriteLine("{");
+            //    file.WriteLine("{");
 
             foreach (var union in vulkanVersion.Unions)
             {
@@ -158,7 +169,7 @@ class Program
                 file.WriteLine("\t}\n");
             }
 
-         //   file.WriteLine("}\n");
+            //   file.WriteLine("}\n");
         }
 
         // structs
@@ -168,7 +179,7 @@ class Program
             file.WriteLine("using System.Runtime.InteropServices;\n");
             file.WriteLine("#nullable disable\n");
             file.WriteLine("namespace GPUVulkan;");
-           // file.WriteLine("{");
+            // file.WriteLine("{");
 
             foreach (var structure in vulkanVersion.Structs)
             {
@@ -250,7 +261,7 @@ class Program
                 file.WriteLine("\t}\n");
             }
 
-           // file.WriteLine("}\n");
+            // file.WriteLine("}\n");
         }
 
         // Handles
@@ -259,7 +270,7 @@ class Program
             file.WriteLine("using System;\n");
             file.WriteLine("#nullable disable\n");
             file.WriteLine("namespace GPUVulkan;");
-          //  file.WriteLine("{");
+            //  file.WriteLine("{");
 
             foreach (var handle in vulkanVersion.Handles)
             {
@@ -288,7 +299,7 @@ class Program
                 file.WriteLine("\t}\n");
             }
 
-           // file.WriteLine("}");
+            // file.WriteLine("}");
         }
 
         // Commands
@@ -308,13 +319,13 @@ class Program
 
                 file.WriteLine("\t\t[DllImport (\"__Internal\")]");
 
-            /*    // Delegate
-                file.WriteLine(
-                    $"\t\tprivate delegate {convertedType} {command.Prototype.Name}Delegate({command.GetParametersSignature(vulkanSpec)});");
+                /*    // Delegate
+                    file.WriteLine(
+                        $"\t\tprivate delegate {convertedType} {command.Prototype.Name}Delegate({command.GetParametersSignature(vulkanSpec)});");
 
-                // internal function
-                file.WriteLine($"\t\tprivate static {command.Prototype.Name}Delegate {command.Prototype.Name}_ptr;");
-*/
+                    // internal function
+                    file.WriteLine($"\t\tprivate static {command.Prototype.Name}Delegate {command.Prototype.Name}_ptr;");
+    */
                 // public function
                 file.WriteLine(
                     $"\t\tpublic static extern {convertedType} {command.Prototype.Name}({command.GetParametersSignature(vulkanSpec)});\n\n");
@@ -338,8 +349,9 @@ class Program
             */
 
             file.WriteLine("\t\t}");
-           // file.WriteLine("\t}");
+            // file.WriteLine("\t}");
             //file.WriteLine("}");
         }
+
     }
 }

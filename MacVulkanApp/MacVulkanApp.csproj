@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectGuid>{8D5CF0EE-60E6-42A3-AD9C-6422B7EF4BB3}</ProjectGuid>
@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <DefineConstants>DEBUG;</DefineConstants>
     <EnablePackageSigning>false</EnablePackageSigning>
-    <ErrorReport>prompt</ErrorReport>    
+    <ErrorReport>prompt</ErrorReport>
     <IncludeMonoRuntime>false</IncludeMonoRuntime>
     <HttpClientHandler>HttpClientHandler</HttpClientHandler>
     <LinkMode>None</LinkMode>
@@ -28,13 +28,13 @@
     <UseRefCounting>true</UseRefCounting>
     <UseSGen>true</UseSGen>
     <WarningLevel>4</WarningLevel>
-    
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
-    <DefineConstants></DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CreatePackage>true</CreatePackage>
@@ -70,9 +70,6 @@
     <ImageAsset Include="Assets.xcassets\Contents.json" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
-  <ItemGroup>
     <Metal Include="Resources\Shaders.metal">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Metal>
@@ -95,12 +92,6 @@
     <InterfaceDefinition Include="MainMenu.xib" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MacVulkan\MacVulkan.csproj">
-      <Project>{F0C1F7C6-B046-4878-B6DA-0860B4CA1512}</Project>
-      <Name>MacVulkan</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\vert.spv" />
   </ItemGroup>
   <ItemGroup>
@@ -110,6 +101,12 @@
     <Content Include="Resources\comp.spv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MacVulkan\MacVulkan.csproj">
+      <Project>{1b3b55ba-0c29-4a4d-8ec6-0b2159a9291e}</Project>
+      <Name>MacVulkan</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>
