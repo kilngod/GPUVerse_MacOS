@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35017.193
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacVulkanApp", "MacVulkanApp\MacVulkanApp.csproj", "{8D5CF0EE-60E6-42A3-AD9C-6422B7EF4BB3}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoltenVKGen", "MoltenVKGen\MoltenVKGen.csproj", "{5F092A8C-F268-4243-B107-1CA637281F1B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacMoltenVK", "MacMoltenVK\MacMoltenVK.csproj", "{59415763-7E4C-4223-A904-43218AB654A2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacVulkan", "MacVulkan\MacVulkan.csproj", "{1B3B55BA-0C29-4A4D-8EC6-0B2159A9291E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacVulkanApp", "MacVulkanApp\MacVulkanApp.csproj", "{966B17A9-751A-4782-8DFF-973A9FBFD01D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacCatalystVulkan", "MacCatalystVulkan\MacCatalystVulkan.csproj", "{113F3DD4-C9D9-4804-947B-9DFD021722C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,22 +17,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8D5CF0EE-60E6-42A3-AD9C-6422B7EF4BB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8D5CF0EE-60E6-42A3-AD9C-6422B7EF4BB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8D5CF0EE-60E6-42A3-AD9C-6422B7EF4BB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8D5CF0EE-60E6-42A3-AD9C-6422B7EF4BB3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5F092A8C-F268-4243-B107-1CA637281F1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5F092A8C-F268-4243-B107-1CA637281F1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F092A8C-F268-4243-B107-1CA637281F1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F092A8C-F268-4243-B107-1CA637281F1B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{59415763-7E4C-4223-A904-43218AB654A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{59415763-7E4C-4223-A904-43218AB654A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{59415763-7E4C-4223-A904-43218AB654A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{59415763-7E4C-4223-A904-43218AB654A2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1B3B55BA-0C29-4A4D-8EC6-0B2159A9291E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1B3B55BA-0C29-4A4D-8EC6-0B2159A9291E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B3B55BA-0C29-4A4D-8EC6-0B2159A9291E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B3B55BA-0C29-4A4D-8EC6-0B2159A9291E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{966B17A9-751A-4782-8DFF-973A9FBFD01D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{966B17A9-751A-4782-8DFF-973A9FBFD01D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{966B17A9-751A-4782-8DFF-973A9FBFD01D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{966B17A9-751A-4782-8DFF-973A9FBFD01D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{113F3DD4-C9D9-4804-947B-9DFD021722C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{113F3DD4-C9D9-4804-947B-9DFD021722C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{113F3DD4-C9D9-4804-947B-9DFD021722C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{113F3DD4-C9D9-4804-947B-9DFD021722C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

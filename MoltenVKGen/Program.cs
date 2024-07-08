@@ -8,7 +8,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        string outputPath = "..\\..\\..\\..\\MacMoltenVK\\VulkanGenerated";
+        string outputPath = "..\\..\\..\\..\\MacCatalystVulkan\\VulkanGenerated";
 
         GenerateFiles(outputPath);
 
@@ -19,7 +19,7 @@ class Program
     public static void GenerateFiles(string outputPath)
     {
         string vkFile = "..\\net7.0\\KhronosRegistry\\vk.xml";
-        // string outputPath = "..\\..\\..\\..\\MacMoltenVK\\VulkanGenerated";
+      
 
         if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
         {

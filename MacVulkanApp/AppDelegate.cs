@@ -1,24 +1,16 @@
-﻿using AppKit;
-using Foundation;
-
 namespace MacVulkanApp
 {
-	[Register ("AppDelegate")]
-	public class AppDelegate : NSApplicationDelegate
-	{
-		public AppDelegate ()
-		{
-		}
+    [Register("AppDelegate")]
+    public class AppDelegate : NSApplicationDelegate
+    {
+        public override void DidFinishLaunching(NSNotification notification)
+        {
+            // Insert code here to initialize your application
+        }
 
-		public override void DidFinishLaunching (NSNotification notification)
-		{
-			// Insert code here to initialize your application
-		}
-
-		public override void WillTerminate (NSNotification notification)
-		{
-			// Insert code here to tear down your application
-		}
-	}
+        public override void WillTerminate(NSNotification notification)
+        {
+            // Insert code here to tear down your application
+        }
+    }
 }
-
